@@ -17,24 +17,20 @@
 #include "ftxui/component/screen_interactive.hpp" // for Component, ScreenInteractive
 #include "ftxui/dom/elements.hpp"                 // for text, hbox, Element
 
-// #include "file.cc"
 #include "tui.cc"
 
 using namespace ftxui;
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   if (argc < 2) {
     ScreenInteractive screen = ScreenInteractive::FitComponent();
     auto component = render_tui();
+
     screen.Loop(component);
   } else if (*argv[1] == '.') {
     std::string path = std::filesystem::current_path();
     std::unique_ptr<ProjectFile> pf = std::make_unique<ProjectFile>();
-    
+
     pf->append_proj(path);
   }
-  // File testing
-  // std::vector<std::string> files = pf->read_path("/home/cadel/Desktop/cject/");
-  // for (auto x : files)
-    // std::cout << x << std::endl;
 }

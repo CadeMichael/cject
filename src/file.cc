@@ -125,6 +125,5 @@ void ProjectFile::remove_proj(std::string path) {
       outputFile << p << std::endl;
     }
     outputFile.close();
-    // std::cout <<  path << "<- deleted";
   }
 }

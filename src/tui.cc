@@ -18,8 +18,6 @@
 
 using namespace ftxui;
 
-// Take a list of component, display them vertically, one column shifted to the
-// right.
 Component Inner(std::vector<Component> children) {
   Component vlist = Container::Vertical(std::move(children));
   return Renderer(vlist, [vlist] {
